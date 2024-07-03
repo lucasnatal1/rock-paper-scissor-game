@@ -1,0 +1,52 @@
+<div class="board-container" [ngClass]="{'center-board': userChoice == undefined}">
+    <div class="choice-board" *ngIf="userChoice == undefined">
+        <div class="bg-triangle">
+            <img src="../../../assets/bg-triangle.svg" alt="Triangle connecting user options">
+        </div>
+        <button class="round-btn paper-clr" (click)="onUserChoice('paper')">
+            <div class="inner-btn">
+                <img src="../../../assets/icon-paper.svg" alt="Paper">
+            </div>
+        </button>
+        <button class="round-btn scissors-clr" (click)="onUserChoice('scissors')">
+            <div class="inner-btn">
+                <img src="../../../assets/icon-scissors.svg" alt="Scissors">
+            </div>
+        </button>
+        <button class="round-btn rock-clr" (click)="onUserChoice('rock')">
+            <div class="inner-btn">
+                <img src="../../../assets/icon-rock.svg" alt="Rock">
+            </div>
+        </button>
+    </div>
+
+    <div class="choice-result" *ngIf="userChoice != undefined">
+        <div class="row">
+            <div class="col">
+                <div [ngClass]="{'winner-user': gameResult === 'win'}"></div>
+                <button class="round-btn fake-btn" [ngClass]="{'paper-clr': userChoice === 'paper', 'scissors-clr': userChoice === 'scissors', 'rock-clr': userChoice === 'rock'}">
+                    <div class="inner-btn">
+                        <img src="../../../assets/icon-paper.svg" alt="Paper" *ngIf="userChoice === 'paper'">
+                        <img src="../../../assets/icon-scissors.svg" alt="Paper" *ngIf="userChoice === 'scissors'">
+                        <img src="../../../assets/icon-rock.svg" alt="Paper" *ngIf="userChoice === 'rock'">
+                    </div>
+                </button>
+                <p class="result-txt">you picked</p>
+            </div>
+
+            <div class="col">
+                <div class="shadow-choice" *ngIf="pcChoice == undefined"></div>
+
+                <div [ngClass]="{'winner-pc': gameResult === 'lose'}" *ngIf="pcChoice != undefined"></div>
+                <button class="round-btn fake-btn" [ngClass]="{'paper-clr': pcChoice === 'paper', 'scissors-clr' : pcChoice === 'scissors', 'rock-clr' : pcChoice === 'rock'}" *ngIf="pcChoice != undefined">
+                    <div class="inner-btn">
+                        <img src="../../../assets/icon-paper.svg" alt="Paper" *ngIf="pcChoice === 'paper'">
+                        <img src="../../../assets/icon-scissors.svg" alt="Paper" *ngIf="pcChoice === 'scissors'">
+                        <img src="../../../assets/icon-rock.svg" alt="Paper" *ngIf="pcChoice === 'rock'">
+                    </div>
+                </button>
+                <p class="result-txt">the house picked</p>
+            </div>
+        </div>
+    </div>
+</div>

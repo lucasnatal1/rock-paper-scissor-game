@@ -1,0 +1,28 @@
+.a {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(229, 25%, 31%);
+  margin-block-start: 3rem;
+}
+
+img {
+  margin-block-start: 7rem;
+}
+
+button {
+  background: transparent;
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}

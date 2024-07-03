@@ -1,0 +1,25 @@
+.result-container {
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  padding-block: 1.5rem;
+}
+
+h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+button {
+  margin-block-start: 0.5rem;
+  background: #fff;
+  color: hsl(229, 25%, 31%);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding-block: 1rem;
+  width: 100%;
+  border-radius: 5px;
+}
