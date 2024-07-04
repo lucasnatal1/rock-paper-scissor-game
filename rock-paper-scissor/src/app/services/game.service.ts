@@ -31,10 +31,12 @@ export class GameService {
   }
 
   private generatePcPick() {
-    let rand = Math.floor(Math.random() * 100) % 3;
-    this.pcPick = rand === 0 ? 'paper' : rand === 1 ? 'rock' : 'scissors';
-    this.pcPickSub.next(this.pcPick);
-    this.checkResult();
+    setTimeout(() => {
+      let rand = Math.floor(Math.random() * 100) % 3;
+      this.pcPick = rand === 0 ? 'paper' : rand === 1 ? 'rock' : 'scissors';
+      this.pcPickSub.next(this.pcPick);
+      this.checkResult();
+    }, 750);
   }
 
   private checkResult() {
@@ -99,6 +101,8 @@ export class GameService {
 
   public playAgain() {
     this.gameResult = undefined;
+    this.pcPick = undefined;
+    this.pcPickSub.next(this.pcPick);
     this.gameResultSub.next(this.gameResult);
   }
 }

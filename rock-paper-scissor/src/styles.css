@@ -22,10 +22,11 @@ button {
 } */
 
 .container {
-  margin-block: max(5vw, 3rem);
-  width: max(300px, 60%);
+  margin-block-start: 3rem;
+  margin-block-end: 1rem;
+  width: clamp(300px, 60%, 900px);
   margin-inline: auto;
-  min-height: calc(100vh - 2 * max(5vw, 3rem));
+  min-height: calc(100vh - 4rem);
 }
 
 .row {

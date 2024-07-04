@@ -1,6 +1,6 @@
 .a {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   top: 0;
   bottom: 0;
   left: 0;
@@ -17,12 +17,50 @@ h1 {
   margin-block-start: 3rem;
 }
 
-img {
+.rules-img {
   margin-block-start: 7rem;
 }
 
 button {
   background: transparent;
   margin-inline: auto;
-  margin-block-start: 2rem;
+  margin-block-start: 8rem;
+}
+
+@media (min-width: 1000px) {
+  .backdrop {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #00000056;
+  }
+
+  .a {
+    position: fixed;
+    margin: auto;
+    width: 420px;
+    height: 50%;
+    border-radius: 10px;
+    text-align: start;
+  }
+
+  h1 {
+    margin-block-start: 1rem;
+    padding-inline-start: 2rem;
+  }
+  
+  .rules-img {
+    margin-block-start: 3rem;
+    margin-inline-start: 58px;
+  }
+  
+  button {
+    position: absolute;
+    top: 25px;
+    right: 32px;
+    margin: 0;
+  }
 }

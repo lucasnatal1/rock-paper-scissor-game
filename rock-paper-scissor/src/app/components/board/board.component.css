@@ -96,19 +96,29 @@
   letter-spacing: 0.5px;
 }
 
+.result-txt-big {
+  margin-block-end: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 .winner-pc {
   position: relative;
 }
 .winner-pc::after {
   content: '';
   position: absolute;
-  right: 4px;
+  right: 5px;
   top: 2px;
   width: var(--btn-size);
   height: var(--btn-size);
   z-index: -1;
   border-radius: 50%;
-  box-shadow: 0 0 0 15px #ffffff25, 0 0 0 35px #ffffff12, 0 0 0 60px #ffffff05;
+  box-shadow: 0 0 0 20px #ffffff25, 0 0 0 45px #ffffff12, 0 0 0 75px #ffffff05;
+  opacity: 0;
+  animation: winner-animation .5s forwards;
 }
 .winner-user {
   position: relative;
@@ -122,35 +132,55 @@
   height: var(--btn-size);
   z-index: -1;
   border-radius: 50%;
-  box-shadow: 0 0 0 15px #ffffff25, 0 0 0 35px #ffffff12, 0 0 0 60px #ffffff05;
+  box-shadow: 0 0 0 20px #ffffff25, 0 0 0 45px #ffffff12, 0 0 0 75px #ffffff05;
+  opacity: 0;
+  animation: winner-animation .5s forwards;
+}
+
+@keyframes winner-animation {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 @media (min-width: 600px) {
   .board-container {
-    padding-block: 8rem;
-    --btn-size: 140px;
-    --triangle-height: 200px;
+    padding-block-start: 8rem;
+    --btn-size: 160px;
+    --triangle-height: 220px;
     --triangle-width: calc(1.125 * var(--triangle-height));
   }
 
-  .winner::after {
-    right: 7px;
-    top: 2px;
-    box-shadow: 0 0 0 20px #ffffff25, 0 0 0 45px #ffffff12, 0 0 0 75px #ffffff05;
+  .winner-user::after {
+    box-shadow: 0 0 0 35px #ffffff25, 0 0 0 75px #ffffff12, 0 0 0 120px #ffffff05;
+  }
+
+  .winner-pc::after {
+    right: 0;
+    box-shadow: 0 0 0 35px #ffffff25, 0 0 0 75px #ffffff12, 0 0 0 120px #ffffff05;
+  }
+
+  .choice-result {
+    margin-block-start: -5rem;
   }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1300px) {
   .board-container {
-    padding-block: 10rem;
+    padding-block-start: 10rem;
     --btn-size: 200px;
     --triangle-height: 270px;
     --triangle-width: calc(1.125 * var(--triangle-height));
   }
 
-  .winner::after {
-    right: 0;
-    top: 2px;
-    box-shadow: 0 0 0 25px #ffffff25, 0 0 0 55px #ffffff12, 0 0 0 90px #ffffff05;
+  .winner-user::after {
+    box-shadow: 0 0 0 50px #ffffff25, 0 0 0 100px #ffffff12, 0 0 0 150px #ffffff05;
+  }
+
+  .winner-pc::after {
+    box-shadow: 0 0 0 50px #ffffff25, 0 0 0 100px #ffffff12, 0 0 0 150px #ffffff05;
+  }
+
+  .choice-result {
+    margin-block-start: -7rem;
   }
 }

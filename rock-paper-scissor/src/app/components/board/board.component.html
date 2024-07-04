@@ -23,6 +23,7 @@
     <div class="choice-result" *ngIf="userChoice != undefined">
         <div class="row">
             <div class="col">
+                <p class="result-txt-big" *ngIf="innerWidth >= 1300">you picked</p>
                 <div [ngClass]="{'winner-user': gameResult === 'win'}"></div>
                 <button class="round-btn fake-btn" [ngClass]="{'paper-clr': userChoice === 'paper', 'scissors-clr': userChoice === 'scissors', 'rock-clr': userChoice === 'rock'}">
                     <div class="inner-btn">
@@ -31,10 +32,11 @@
                         <img src="../../../assets/icon-rock.svg" alt="Paper" *ngIf="userChoice === 'rock'">
                     </div>
                 </button>
-                <p class="result-txt">you picked</p>
+                <p class="result-txt" *ngIf="innerWidth < 1300">you picked</p>
             </div>
 
             <div class="col">
+                <p class="result-txt-big" *ngIf="innerWidth >= 1300">the house picked</p>
                 <div class="shadow-choice" *ngIf="pcChoice == undefined"></div>
 
                 <div [ngClass]="{'winner-pc': gameResult === 'lose'}" *ngIf="pcChoice != undefined"></div>
@@ -45,7 +47,7 @@
                         <img src="../../../assets/icon-rock.svg" alt="Paper" *ngIf="pcChoice === 'rock'">
                     </div>
                 </button>
-                <p class="result-txt">the house picked</p>
+                <p class="result-txt" *ngIf="innerWidth < 1300">the house picked</p>
             </div>
         </div>
     </div>

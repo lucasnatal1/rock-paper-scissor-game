@@ -2,9 +2,7 @@
   <app-score></app-score>
   <app-board></app-board>
   <div class="result-container">
-    <!-- <app-result *ngIf="isFinished"></app-result> -->
     <app-result [style]="{'display': isFinished ? 'block' : 'none'}"></app-result>
-    <!-- <app-result [style]="{'opacity': isFinished ? 1 : 0}"></app-result> -->
   </div>
   <div class="rules-container">
     <button type="button" (click)="flagRules = true">rules</button>

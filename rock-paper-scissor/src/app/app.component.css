@@ -17,3 +17,23 @@ button {
   padding: 0.8rem 2rem;
   border-radius: 7px;
 }
+
+@media (min-width: 600px) {
+  .result-container {
+    min-height: 24px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .result-container {
+    min-height: 1rem;
+    margin-block-start: -12rem;
+  }
+
+  .rules-container {
+    text-align: end;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+  }
+}
